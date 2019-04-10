@@ -12,7 +12,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @NoArgsConstructor
 @ToString
 @EqualsAndHashCode
-@Document
+@Document(collection="coffeeorders")
 public class Order {
     public String coffee;
     @Id
