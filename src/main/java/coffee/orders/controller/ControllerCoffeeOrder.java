@@ -18,14 +18,14 @@ public class ControllerCoffeeOrder {
         return coffeeOrder.createOrder(orderDTO);
     }
 
-    @GetMapping(value = "/get/{email}")
-    OrderDTO getOrder(@PathVariable(value = "email") String email) {
-        return coffeeOrder.getOrder(email);
+    @GetMapping(value = "/get")
+    OrderDTO getOrder(@RequestParam(value = "emailAddress") String emailAddress) {
+        return coffeeOrder.getOrder(emailAddress);
     }
 
-    @DeleteMapping(value = "/delete/{email}")
-    boolean deliverOrder(@PathVariable(value = "email") String email) {
-        return coffeeOrder.deliverOrder(email);
+    @DeleteMapping(value = "/delete")
+    boolean deliverOrder(@RequestParam(value = "emailAddress") String emailAddress) {
+        return coffeeOrder.deliverOrder(emailAddress);
     }
 
     @PutMapping(value = "/update")
